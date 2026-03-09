@@ -1,0 +1,311 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e0f7fa;
+    color: #333;
+    
+}
+
+body:not(.fade-out) {
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body.fade-out {
+    animation: fadeOut 0.8s ease forwards;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+}
+
+header {
+    background-color: #1d8de8;
+    color: white;
+    padding: 1rem 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    list-style: none;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #05cab3;
+}
+
+main {
+    padding: 2rem;
+    text-align: center;
+}
+
+.fade-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .fade-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+  }
+  
+  .fade-item:nth-child(1) { animation-delay: 0.9s; }
+  .fade-item:nth-child(2) { animation-delay: 1.4s; }
+  .fade-item:nth-child(3) { animation-delay: 2s; }
+  .fade-item:nth-child(4) { animation-delay: 2.4s; }
+  .fade-item:nth-child(5) { animation-delay: 2.9s; }
+  .fade-item:nth-child(6) { animation-delay: 3.5s; }
+  .fade-item:nth-child(7) { animation-delay: 3.9s; }
+  .fade-item:nth-child(8) { animation-delay: 4.3s; }
+  .fade-item:nth-child(9) { animation-delay: 4.7s; }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .source{
+    color: rgb(44, 44, 44);
+    transition: color 0.2s ease;
+  }
+
+  .source:hover{
+    color: #125581;
+  }
+  
+.faq{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-item {
+    display: flex;
+    margin-bottom: 15px;
+    flex-direction: column;
+    max-width: 60%;
+}
+.faq-item.left{
+    align-self: flex-start;
+    text-align: left;
+}
+
+.faq-item.right{
+    align-self: flex-end;
+    text-align: right;
+}
+
+.question {
+  max-width: 800px;
+  padding: 50px;
+  font-size: 1rem;
+  background-color: #2980b9;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: color 0.6s ease;
+  text-align: center;
+}
+
+.question:hover {
+  background-color: #90caf1;
+}
+
+.answer {
+  max-width: 800px;
+  max-height: 0;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  overflow: hidden;
+  color: #000000;
+  padding: 0 50px;
+  border: solid 1px #2980b9;
+  border-radius: 6px;
+  text-align: justify;
+}
+.answer.open {
+  max-height: 1200px; 
+  padding: 12px;
+}
+
+.answer p {
+  margin-bottom: 1rem;
+}
+
+.faq-image{
+  width: 450px;
+  height: auto;
+  margin: 1rem auto;
+  display: block;
+  border-radius: 8px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+
+h2 {
+  font-size: 2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+p {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+  
+  .timeline {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 0;
+    border-left: 4px solid #2980b9;
+    min-height: 100%;
+  }
+  
+  .timeline-item {
+    margin: 2rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+  
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 0.5rem;
+    left: -0.7rem;
+    width: 1rem;
+    height: 1rem;
+    background-color: #2980b9;
+    border-radius: 50%;
+  }
+  
+  /* --- Accordéon inversé (cartes) --- */
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+  }
+  
+  .card {
+    width: 300px;
+    height: 200px;
+    perspective: 1000px;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .front, .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform 0.6s ease;
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .front {
+    background-color: #3498db;
+    color: white;
+    transform: rotateY(0deg);
+  }
+  
+  .back {
+    background-color: #ecf0f1;
+    color: #333;
+    transform: rotateY(180deg);
+  }
+  
+  /* Survol inversé en CSS seulement */
+  .card:hover .front {
+    transform: rotateY(180deg);
+  }
+  .card:hover .back {
+    transform: rotateY(0deg);
+  }
+ 
+footer {
+    background-color: #1d8de8;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+
+}
+
+.lang-button{
+    bottom: 10px;
+    right: 20px;
+    border: none;
+    cursor: pointer;
+}
+.lang-button img {
+    width: 40px;
+    height: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3 ease;
+    cursor: pointer;
+}
+
+.lang-button img:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
